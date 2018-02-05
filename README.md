@@ -39,3 +39,8 @@ virtualenv
 - [Django开发个人博客网站——23、域名申请、备案与服务器的选择](http://www.geerniya.cn/blog/42/)
 - [Django开发个人博客网站——24、服务器的远程连接管理](http://www.geerniya.cn/blog/43/)
 - [Django开发个人博客网站——25、服务器centos 7 安装nginx](http://www.geerniya.cn/blog/44/)
+- [Django开发个人博客网站——26、服务器centos7安装mysql](http://www.geerniya.cn/blog/45/)
+- [Django开发个人博客网站——27、服务器centos7安装Python3.6 与 pip3](http://www.geerniya.cn/blog/46/)
+- [Django开发个人博客网站——28、服务器centos7创建虚拟环境](http://www.geerniya.cn/blog/47/)
+- [Django开发个人博客网站——29、服务器centos7安装uwsgi](http://www.geerniya.cn/blog/48/)
+- [Django开发个人博客网站——30、总结](http://www.geerniya.cn/blog/49/)
