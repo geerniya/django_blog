@@ -1,8 +1,9 @@
 # django_blog
 基于Django开发的next主题个人博客网站：http://www.geerniya.cn/
+
 前端模板下载：[django_blog_templates](https://github.com/geerniya/django_blog_templates)
 
-##开发环境
+## 开发环境
 
 ```
 Python 3.6
@@ -13,7 +14,7 @@ virtualenv
 ```
 部署在阿里云服务器上，centos7系统，部署方式为nginx+uwsgi
 
-##详细步骤如下
+## 详细步骤如下
 
 -  [Django开发个人博客网站——1、开发环境](http://www.geerniya.cn/blog/17/)
 - [Django开发个人博客网站——2、通过virtualenv与virtualenvwrapper创建虚拟环境](http://www.geerniya.cn/blog/18/)
