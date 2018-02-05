@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}
+标签云
+{% endblock %}
+
+{% block content %}
+<div class="content-wrap">
+    <div id="content" class="content">
+
+        <div id="posts" class="posts-expand">
+            <header class="post-header">
+                <h2 class="post-title" itemprop="name headline">tags</h2>
+            </header>
+
+            <div class="tag-cloud">
+                <div class="tag-cloud-title">
+                    目前共计 {{ tag_nums }} 个标签
+                </div>
+                <div class="tag-cloud-tags">
+
+                    {% for tag in all_tag %}
+                        <a href="{% url 'tag_name' tag.name %}"
+
+                           {% if tag.number <= 2 %}
+                                style="font-size: 12.5px; color: #999"
+                           {% elif tag.number <= 5 %}
+                                style="font-size: 15px; color: #666"
+                           {% elif tag.number <= 10 %}
+                                style="font-size: 20px; color: #444"
+                           {% elif tag.number <= 20 %}
+                                style="font-size: 25px; color: #222"
+                           {% elif tag.number <= 50 %}
+                                style="font-size: 30px; color: #111"
+                           {% else %}
+                                style="font-size: 35px; color: #000"
+                           {% endif %}>
+
+                            {{ tag.name }}</a>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="comments" id="comments">
+
+        <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+
+    </div>
+
+</div>
+{% endblock %}

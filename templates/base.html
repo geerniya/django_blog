@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<!-- saved from url=(0023)http://www.geerniya.cn/ -->
+<html class="theme-next pisces use-motion" lang="zh-Hans"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="keywords" content="个人网站博客，next主题，">
+<meta name="description" content="django框架建立的next主题个人博客">
+
+
+<link href="/static/css_js/jquery.fancybox.css" rel="stylesheet" type="text/css">
+<link href="/static/css_js/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/static/css_js/main.css" rel="stylesheet" type="text/css">
+<link href="/static/css_js/extra.css" rel="stylesheet" type="text/css">
+
+<link rel="alternate" href="http://www.geerniya.cn/rss" title="往事如烟的博客" type="application/atom+xml">
+<link rel="shortcut icon" type="image/x-icon" href="/static/image/logo.ico">
+<link rel="canonical" href="http://www.geerniya.cn/">
+
+<!--搜索关键词高亮-->
+<style>
+        span.highlighted {
+            color: red;
+        }
+</style>
+
+<script src="/static/css_js/push.js"></script>
+<script src="/static/css_js/hm.js"></script>
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '925690',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c5127ebccef09f61efbb5ce4885b2c1f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<title> {% block title %}往事如烟的博客{% endblock %} </title>
+
+<style type="text/css">.fancybox-margin{margin-right:17px;}</style>
+<style type="text/css">.fancybox-margin{margin-right:17px;}</style></head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+    <div class="container one-collumn sidebar-position-leftpage-home">
+        <div class="headband"></div>
+
+        <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+            <div class="header-inner">
+                <div class="site-meta ">
+                    <div class="custom-logo-site-title">
+                        <a href="http://www.geerniya.cn/" class="brand" rel="start" style="opacity: 1;">
+                            <span class="logo-line-before"><i></i></span>
+                            <span class="site-title" style="opacity: 1; top: 0px;">往事如烟的博客</span>
+                            <span class="logo-line-after"><i></i></span>
+                        </a>
+                    </div>
+                    <p class="site-subtitle" style="opacity: 1; top: 0px;">To be a better man</p>
+                 </div>
+
+                <div class="site-nav-toggle">
+                  <button>
+                    <span class="btn-bar"></span>
+                    <span class="btn-bar"></span>
+                    <span class="btn-bar"></span>
+                  </button>
+                </div>
+
+                <nav class="site-nav">
+                    <ul id="menu" class="menu">
+                        <li class="menu-item menu-item-home menu-item-active" style="opacity: 1; transform: translateY(0px);">
+                          <a href="{% url 'index' %}" rel="section">
+                              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+                            首页
+                          </a>
+                        </li>
+
+                        <li class="menu-item menu-item-archives" style="opacity: 1; transform: translateY(0px);">
+                          <a href="{% url 'archive' %}" rel="section">
+                              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+                            归档
+                          </a>
+                        </li>
+
+                        <li class="menu-item menu-item-archives" style="opacity: 1; transform: translateY(0px);">
+                          <a href="{% url 'tags' %}" rel="section">
+                              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+                            标签
+                          </a>
+                        </li>
+
+                        <li class="menu-item menu-item-archives" style="opacity: 1; transform: translateY(0px);">
+
+                             <a href="http://www.geerniya.cn/#search" id="search" rel="section">
+                              <i class="menu-item-icon fa fa-search"></i>
+                             </a>
+
+                            <form action="{% url 'haystack_search' %}">
+                                <input id="unit" type="search" name="q" placeholder="搜索">
+                            </form>
+
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <main id="main" class="main">
+            <div class="main-inner">
+                <div class="sidebar-toggle">
+                    <div class="sidebar-toggle-line-wrap">
+                        <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+                        <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+                        <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+                    </div>
+                </div>
+
+                <aside id="sidebar" class="sidebar" style="margin-top: 302px; display: block;">
+                    <div class="sidebar-inner">
+                        <section class="site-overview sidebar-panel sidebar-panel-active">
+                            <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                                <img class="site-author-image" itemprop="image" src="/static/image/mayun.png" alt="geerniya">
+                                <p class="site-author-name" itemprop="name">geerniya</p>
+                                <p class="site-description motion-element" itemprop="description">请在此处添加一句鸡汤格言</p>
+                            </div>
+                            <nav class="site-state motion-element">
+
+                                <div class="site-state-item site-state-posts">
+                                    <a href="http://www.geerniya.cn/archive/">
+                                        <span class="site-state-item-count">{{ blog_nums }}</span>
+                                        <span class="site-state-item-name">日志</span>
+                                    </a>
+                                </div>
+
+                                <div class="site-state-item site-state-categories">
+                                    <span class="site-state-item-count">{{ cate_nums }}</span>
+                                    <span class="site-state-item-name">分类</span>
+                                </div>
+
+                                <div class="site-state-item site-state-tags">
+                                    <a href="http://www.geerniya.cn/tags/">
+                                        <span class="site-state-item-count">{{ tag_nums }}</span>
+                                        <span class="site-state-item-name">标签</span>
+                                    </a>
+                                </div>
+
+                            </nav>
+
+                            <div class="feed-link motion-element">
+                                <a href="{% url 'rss' %}" rel="alternate">
+                                    <i class="fa fa-rss"></i>
+                                    RSS
+                                </a>
+                            </div>
+
+                            <div class="links-of-author motion-element">
+
+                                <span class="links-of-author-item">
+                                        <a href="https://github.com/geerniya" target="_blank" title="GitHub">
+                                            <i class="fa fa-fw fa-github"></i>
+                                            GitHub
+                                        </a>
+                                  </span>
+
+                                <span class="links-of-author-item">
+                                    <a href="https://www.zhihu.com/people/geerniya" target="_blank" title="知乎">
+                                        <i class="fa fa-book"></i>
+                                        知乎
+                                    </a>
+                                </span>
+
+                                <span class="links-of-author-item">
+                                    <a href="http://blog.csdn.net/geerniya" target="_blank" title="知乎">
+                                        <i class="fa fa-fw fa-globe"></i>
+                                        博客
+                                    </a>
+                                </span>
+
+                            </div>
+
+                            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+                                <div class="links-of-blogroll-title">
+                                    <i class="fa fa-link"></i>
+                                    Links
+                                </div>
+                                <ul class="links-of-blogroll-list">
+
+                                    <li class="links-of-blogroll-item">
+                                        <a href="http://www.geerniya.cn/" title="往事如烟的博客" target="_blank">往事如烟的博客</a>
+                                    </li>
+
+                                    <li class="links-of-blogroll-item">
+                                        <a href="https://www.zmrenwu.com/" title="追梦人物的博客" target="_blank">追梦人物的博客</a>
+                                    </li>
+
+                                </ul>
+                              </div>
+
+                      </section>
+                    </div>
+                </aside>
+
+
+        {% block content %}
+
+        {% endblock %}
+
+
+            </div>
+        </main>
+
+        <footer id="footer" class="footer">
+            <div class="footer-inner">
+                <div class="copyright">
+                     ©  2017 -
+                    <span itemprop="copyrightYear">2018</span>
+                    <span class="with-love">
+                        <i class="fa fa-heart"></i>
+                    </span>
+                    <span class="author" itemprop="copyrightHolder">geerniya</span>
+                </div>
+                <div class="powered-by">
+                    豫ICP备18002345号-1
+                </div>
+                <div class="theme-info">
+                    Supported by <a href="https://www.aliyun.com/">阿里云</a>
+                </div>
+            </div>
+        </footer>
+
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+      if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+        window.Promise = null;
+      }
+    </script>
+    <script type="text/javascript" src="/static/css_js/index.js"></script>
+    <script type="text/javascript" src="/static/css_js/fastclick.min.js"></script>
+    <script type="text/javascript" src="/static/css_js/jquery.lazyload.js "></script>
+    <script type="text/javascript" src="/static/css_js/velocity.min.js "></script>
+    <script type="text/javascript" src="/static/css_js/velocity.ui.min.js "></script>
+    <script type="text/javascript" src="/static/css_js/jquery.fancybox.pack.js "></script>
+    <script type="text/javascript" src="/static/css_js/utils.js "></script>
+    <script type="text/javascript" src="/static/css_js/motion.js "></script>
+    <script type="text/javascript" src="/static/css_js/affix.js "></script>
+    <script type="text/javascript" src="/static/css_js/pisces.js "></script>
+    <script type="text/javascript" src="/static/css_js/bootstrap.js "></script>
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href,
+        sourceId: "",
+        productKey: "35099139b61244da8d227be2d3dedbbd",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+{% block content_js %}
+
+{% endblock %}
+
+
+
+
+
+</body></html>
