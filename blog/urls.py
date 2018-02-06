@@ -38,3 +38,10 @@ urlpatterns = [
     url(r'^static/(?P<path>.*)/$', serve, {'document_root': STATIC_ROOT}),
 
 ]
+
+
+# 配置全局404页面
+hander404 = 'myblog.views.page_not_found'
+
+# 配置全局505页面
+hander505 = 'myblog.views.page_errors'
