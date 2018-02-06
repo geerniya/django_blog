@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import View
 from pure_pagination import PageNotAnInteger, Paginator
 import markdown
@@ -97,7 +97,7 @@ class TagDetailView(View):
         标签下的所有博客
         """
     def get(self, request, tag_name):
-        tag = Tag.objects.filter(name=tag_name).first()
+        tag = get_object_or_404(Tag, name=tag_name)
         tag_blogs = tag.blog_set.all()
         # 博客、标签、分类数目统计
         count_nums = Counts.objects.get(id=1)
@@ -128,7 +128,7 @@ class BlogDetailView(View):
     博客详情页
     """
     def get(self, request, blog_id):
-        blog = Blog.objects.get(id=blog_id)
+        blog = get_object_or_404(Blog, pk=blog_id)
         # 博客、标签、分类数目统计
         count_nums = Counts.objects.get(id=1)
         blog_nums = count_nums.blog_nums
@@ -194,7 +194,7 @@ class CategoryDetaiView(View):
     博客分类
     """
     def get(self, request, category_name):
-        category = Category.objects.filter(name=category_name).first()
+        category = get_object_or_404(Category, name=category_name)
         cate_blogs = category.blog_set.all()
         # 博客、标签、分类数目统计
         count_nums = Counts.objects.get(id=1)
@@ -253,3 +253,11 @@ class MySearchView(SearchView):
 
         return (paginator, page)
 
+
+#配置404 500错误页面
+def page_not_found(request):
+    return render(request, '404.html')
+
+
+def page_errors(request):
+    return render(request, '500.html')
