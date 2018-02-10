@@ -47,3 +47,4 @@ virtualenv
 - [Django开发个人博客网站——29、服务器centos7安装uwsgi](http://www.geerniya.cn/blog/48/)
 - [Django开发个人博客网站——30、总结](http://www.geerniya.cn/blog/49/)
 - [Django开发个人博客网站——31、给网站添加上404、500页面](http://www.geerniya.cn/blog/50/)
+- [Django开发个人博客网站——32、启用Let's Encrypt免费的HTTPS证书](http://www.geerniya.cn/blog/51/)
