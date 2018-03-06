@@ -12,7 +12,7 @@ pycharm
 mysql 5.7
 virtualenv
 ```
-部署在阿里云服务器上，centos7系统，部署方式为nginx+uwsgi
+部署在阿里云服务器上，centos7系统，部署方式为nginx+uwsgi。觉得有用的欢迎给个star
 
 ## 详细步骤如下
 
