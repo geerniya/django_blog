@@ -1,8 +1,9 @@
+import markdown
+
 from django.shortcuts import render, get_object_or_404
 from django.views import View
-from pure_pagination import PageNotAnInteger, Paginator
-import markdown
 from django.http import HttpResponse
+from pure_pagination import PageNotAnInteger, Paginator
 from haystack.views import SearchView
 
 from blog.settings import HAYSTACK_SEARCH_RESULTS_PER_PAGE
