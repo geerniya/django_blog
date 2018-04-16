@@ -22,7 +22,6 @@ class IndexView(View):
         blog_nums = count_nums.blog_nums
         cate_nums = count_nums.category_nums
         tag_nums = count_nums.tag_nums
-        count_nums.visit_nums += 1
         count_nums.save()
 
         for blog in all_blog:
