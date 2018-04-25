@@ -96,21 +96,39 @@
 
                 <nav class="site-nav">
                     <ul id="menu" class="menu">
-                        <li class="menu-item menu-item-home menu-item-active" style="opacity: 1; transform: translateY(0px);">
+                        <li 
+                            {% if request.path == '/' %}
+                            class="menu-item menu-item-home menu-item-active" 
+                            {% else %}
+                            class="menu-item menu-item-active"
+                            {% endif %}
+                            style="opacity: 1; transform: translateY(0px);">
                           <a href="{% url 'index' %}" rel="section">
                               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
                             首页
                           </a>
                         </li>
 
-                        <li class="menu-item menu-item-archives" style="opacity: 1; transform: translateY(0px);">
+                        <li 
+                            {% if request.path|slice:"8" == '/archive' %}
+                            class="menu-item menu-item-home menu-item-active" 
+                            {% else %}
+                            class="menu-item menu-item-active"
+                            {% endif %}
+                            style="opacity: 1; transform: translateY(0px);">
                           <a href="{% url 'archive' %}" rel="section">
                               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
                             归档
                           </a>
                         </li>
 
-                        <li class="menu-item menu-item-archives" style="opacity: 1; transform: translateY(0px);">
+                        <li 
+                            {% if request.path|slice:"5" == '/tags' %}
+                            class="menu-item menu-item-home menu-item-active" 
+                            {% else %}
+                            class="menu-item menu-item-active"
+                            {% endif %}
+                            style="opacity: 1; transform: translateY(0px);">
                           <a href="{% url 'tags' %}" rel="section">
                               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
                             标签
