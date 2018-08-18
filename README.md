@@ -1,5 +1,5 @@
 # django_blog
-基于Django开发的next主题个人博客网站：http://www.geerniya.cn/
+基于Django开发的next主题个人博客网站：http://www.geerniya.cn/  (服务器到期，没钱续费了。。。)
 
 前端模板下载：[django_blog_templates](https://github.com/geerniya/django_blog_templates)
 
@@ -15,6 +15,8 @@ virtualenv
 部署在阿里云服务器上，centos7系统，部署方式为nginx+uwsgi。觉得有用的欢迎给个star
 
 ## 详细步骤如下
+
+## 服务器到期，该教程没法在线看了，教程移植到我的博客上：https://blog.csdn.net/geerniya/article/details/79229970
 
 -  [Django开发个人博客网站——1、开发环境](http://www.geerniya.cn/blog/17/)
 - [Django开发个人博客网站——2、通过virtualenv与virtualenvwrapper创建虚拟环境](http://www.geerniya.cn/blog/18/)
